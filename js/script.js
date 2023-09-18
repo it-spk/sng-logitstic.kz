@@ -3,10 +3,30 @@ $(document).ready(function(){
     $('.carousel').slick({
         infinite: true,
         slidesToShow: 8,
-        slidesToScroll: 1,
+        slidesToScroll: 2,
         arrows: false,
         autoplay: true,
-        speed: 500
+        speed: 500,
+        responsive: [
+          {
+            breakpoint: 780,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 1,
+              infinite: true,
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]
       });
     
       var zero = 0;
