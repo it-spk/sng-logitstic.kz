@@ -3,7 +3,7 @@ $(document).ready(function(){
     $('.carousel').slick({
         infinite: true,
         slidesToShow: 8,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
         arrows: false,
         autoplay: true,
         speed: 500,
@@ -48,8 +48,8 @@ $(document).ready(function(){
             // Store hash
             var hash = this.hash;
             
-            // $('.menu').removeClass('menu_active');
-            // $('.burger__line').removeClass('burger__line-active');
+            $('.menu').removeClass('menu_active');
+            $('span').removeClass('active-line');
             // Using jQuery's animate() method to add smooth page scroll
             // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
             $('html, body').animate({
@@ -62,5 +62,9 @@ $(document).ready(function(){
         } // End if
     });
 
+    $('.burger').on('click', function(){
+      $('.menu').toggleClass('menu_active');
+      $('span').toggleClass('active-line');
+    })
   
 }); 
