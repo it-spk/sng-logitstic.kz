@@ -50,6 +50,8 @@ $(document).ready(function(){
             
             $('.menu').removeClass('menu_active');
             $('span').removeClass('active-line');
+            $('body').removeClass('scroll-y');
+
             // Using jQuery's animate() method to add smooth page scroll
             // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
             $('html, body').animate({
@@ -65,6 +67,33 @@ $(document).ready(function(){
     $('.burger').on('click', function(){
       $('.menu').toggleClass('menu_active');
       $('span').toggleClass('active-line');
+      $('body').toggleClass('scroll-y');
     })
+
+
+
+    function validateForm(form){
+      $(form).validate({
+        rules:{
+          name:{
+            required: true,
+            minlength: 2
+          },
+          phone: "required"
+        },
+        messages: {
+          name: {
+            required: "Пожалуйста введите свое имя",
+            minlength: jQuery.validator.format("Введите {0} символа!")
+          },
+          phone: "Введите свой номер телефона",
+          errorClass: "invalid"
+        }
+      });
+    }
+
+    validateForm('.feed-form')
+
+    $('input[name=phone]').mask("+7(999)999-99-99");
   
 }); 
