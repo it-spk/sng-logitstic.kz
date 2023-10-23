@@ -3,8 +3,8 @@
 /* https://api.telegram.org/bot6401833653:AAGX6h2WnLxwMaTDS83z-nKl3C5G0HpLboA/getUpdates,
 где, XXXXXXXXXXXXXXXXXXXXXXX - токен вашего бота, полученный ранее */
 
-$name = $_POST['user_name'];
-$phone = $_POST['user_phone'];
+$name = $_POST['name'];
+$phone = $_POST['phone'];
 $token = "6401833653:AAGX6h2WnLxwMaTDS83z-nKl3C5G0HpLboA";
 $chat_id = "-4080883398";
 $arr = array(
